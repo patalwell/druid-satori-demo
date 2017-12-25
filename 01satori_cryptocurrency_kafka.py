@@ -11,7 +11,7 @@ import time
 from satori.rtm.client import make_client, SubscriptionMode
 
 endpoint = "wss://open-data.api.satori.com"
-appkey = "YOUR_KEY_HERE"
+appkey = "62c9e8A829Ae1Fa26cbBAd1409aC5EaA"
 channel = "cryptocurrency-market-data"
 
 def main():
@@ -20,7 +20,7 @@ def main():
         opts, args = getopt(sys.argv[1:], "k:t:")
     except Exception, e:
         assert False, "Usage: satori_cryptocurrency_kafka [-k kafka_endpoint] [-t kafka_topic]"
-    kafka_endpoint = "localhost:9092"
+    kafka_endpoint = "pathdp3.field.hortonworks.com:6667"
     kafka_topic = channel
     for (k,v) in opts:
         if k in ['-k']:
@@ -34,7 +34,7 @@ def main():
             def on_subscription_data(self, data):
                 for message in data['messages']:
                     message['_timestamp'] = int(time.time())
-                    kafka_producer.send(kafka_topic, bytes(json.dumps(message)))
+		    kafka_producer.send(kafka_topic, bytes(json.dumps(message)))
                     main.count += 1
 
         subscription_observer = SubscriptionObserver()

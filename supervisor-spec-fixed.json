@@ -36,7 +36,7 @@
   "ioConfig": {
     "topic": "cryptocurrency-market-data",
     "consumerProperties": {
-      "bootstrap.servers": "druid.example.com:9092"
+      "bootstrap.servers": "pathdp3.field.hortonworks.com:6667"
     },
     "taskCount": 1,
     "replicas": 1,

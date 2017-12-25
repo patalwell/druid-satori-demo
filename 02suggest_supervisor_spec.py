@@ -30,7 +30,7 @@ def main():
         opts, args = getopt(sys.argv[1:], "k:t:")
     except Exception, e:
         assert False, "Usage: satori_cryptocurrency_kafka [-k kafka_endpoint] [-t kafka_topic]"
-    kafka_endpoint = "localhost:9092"
+    kafka_endpoint = "localhost:6667"
     kafka_topic = channel
     for (k,v) in opts:
         if k in ['-k']:
