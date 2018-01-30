@@ -30,7 +30,7 @@ def main():
         opts, args = getopt(sys.argv[1:], "k:t:")
     except Exception, e:
         assert False, "Usage: satori_cryptocurrency_kafka [-k kafka_endpoint] [-t kafka_topic]"
-    kafka_endpoint = "localhost:6667"
+    kafka_endpoint = "pathdp3.field.hortonworks.com:6667"
     kafka_topic = channel
     for (k,v) in opts:
         if k in ['-k']:
@@ -58,7 +58,7 @@ def main():
         measure_fields.append('      {{ "type": "doubleSum", "name": "{0}", "fieldName": "{0}" }}'.format(m))
     measure_string = ",\n".join(measure_fields)
 
-    template = open("supervisor-spec-template.json")
+    template = open("supervisor-spec-fixed.json")
     text = template.read()
     spec = text.format(channel, dimension_string, measure_string, channel)
     file = "supervisor-spec.json"
