@@ -1,0 +1,6 @@
+#GitIgnore for Pycharm
+
+/.idea/**
+
+/.DS_Store
+

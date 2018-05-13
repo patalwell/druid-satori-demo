@@ -1,4 +1,4 @@
 #!/bin/sh
 
 CHANNEL=cryptocurrency-nifi-data
-/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper pathdp1.field.hortonworks.com:2181 --topic $CHANNEL --from-beginning
+/usr/local/Cellar/kafka/1.0.0/bin/kafka-console-consumer --zookeeper pathdp1.field.hortonworks.com:2181 --topic $CHANNEL --from-beginning
